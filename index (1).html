@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DTS</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Vazirmatn",sans-serif}
+
+body{
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+header{
+  text-align:center;
+  padding:60px 20px 30px;
+}
+
+.logo{
+  font-size:64px;
+  font-weight:900;
+  letter-spacing:8px;
+  background: linear-gradient(90deg,#00f5a0,#00d9f5);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:18px;
+  opacity:.8;
+}
+
+.main{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+  padding:40px 20px 80px;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:280px;
+  height:180px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  transition:.35s;
+  text-align:center;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+
+.icon{font-size:42px;margin-bottom:15px}
+.card h2{font-size:20px}
+
+.models{
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  margin-top:30px;
+  animation:fadeIn .4s ease;
+}
+
+.model-btn{
+  width:220px;
+  padding:15px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  cursor:pointer;
+  transition:.3s;
+}
+
+.model-btn:hover{
+  background:rgba(255,255,255,0.2);
+  transform:scale(1.05);
+}
+
+.back-btn{
+  margin-top:10px;
+  font-size:14px;
+  opacity:.8;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  opacity:.7;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DTS</div>
+  <div class="subtitle">سیستم خدمات و پشتیبانی محصولات</div>
+</header>
+
+<section class="main" id="mainMenu">
+
+  <div class="card" onclick="showModels()">
+    <div class="icon">📘</div>
+    <h2>بروشور محصولات</h2>
+  </div>
+
+  <div class="card" onclick="goWarranty()">
+    <div class="icon">🛡️</div>
+    <h2>فعال‌سازی گارانتی</h2>
+  </div>
+
+</section>
+
+<!-- بخش مدل‌ها -->
+<div class="models" id="modelsSection">
+  <div class="model-btn">مدل TS-60</div>
+  <div class="model-btn">مدل PTR4</div>
+  <div class="back-btn" onclick="goBack()">⬅ بازگشت</div>
+</div>
+
+<footer>
+© 2026 DTS - تمامی حقوق محفوظ است
+</footer>
+
+<script>
+function showModels(){
+  document.getElementById("mainMenu").style.display="none";
+  document.getElementById("modelsSection").style.display="flex";
+}
+
+function goBack(){
+  document.getElementById("modelsSection").style.display="none";
+  document.getElementById("mainMenu").style.display="flex";
+}
+
+function goWarranty(){
+  window.location.href="http://digitaltechnosound.com/shop/"; // ← اینجا لینک سایت گارانتی خودتو بذار
+}
+</script>
+
+</body>
+</html>
